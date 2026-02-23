@@ -1,0 +1,21 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import KulinerGrid from '../components/KulinerGrid.astro';
+import Modal from '../components/Modal.astro';
+---
+
+<Layout title="MADANG.COM - Penjelajah Kuliner Yogyakarta">
+  <Hero />
+  <About />
+  <KulinerGrid />
+  <Modal />
+</Layout>
+
+<script>
+  // Add Alpine.js for interactivity
+  import Alpine from 'alpinejs'
+
+  Alpine.start()
+</script>

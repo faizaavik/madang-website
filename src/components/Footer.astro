@@ -1,0 +1,92 @@
+---
+// Footer Component
+---
+
+<!-- Footer / Kontak -->
+<footer id="kontak" class="bg-gray-900 text-white py-16">
+  <div
+    class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-12"
+  >
+    <div>
+      <h2 class="text-2xl font-bold text-orange-500 mb-6">MADANG.COM</h2>
+      <p class="text-gray-400">
+        Platform terpercaya untuk eksplorasi kuliner di wilayah Daerah
+        Istimewa Yogyakarta.
+      </p>
+      <div class="mt-6 flex space-x-4">
+        <a
+          href="#"
+          class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-orange-600 transition"
+          ><i class="fab fa-instagram"></i
+        ></a>
+        <a
+          href="#"
+          class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-orange-600 transition"
+          ><i class="fab fa-tiktok"></i
+        ></a>
+        <a
+          href="#"
+          class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-orange-600 transition"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+      </div>
+    </div>
+    <div>
+      <h4 class="text-lg font-bold mb-6 border-b border-gray-700 pb-2">
+        Navigasi
+      </h4>
+      <ul class="space-y-4 text-gray-400">
+        <li>
+          <a href="#beranda" class="hover:text-white transition">Beranda</a>
+        </li>
+        <li>
+          <a href="#tentang" class="hover:text-white transition">Tentang</a>
+        </li>
+        <li>
+          <a href="#referensi" class="hover:text-white transition"
+            >Referensi</a
+          >
+        </li>
+        <li>
+          <a href="#kontak" class="hover:text-white transition">Kontak</a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="text-lg font-bold mb-6 border-b border-gray-700 pb-2">
+        Lokasi Terpopuler
+      </h4>
+      <ul class="space-y-4 text-gray-400">
+        <li><a href="#" class="hover:text-white transition">Sleman</a></li>
+        <li><a href="#" class="hover:text-white transition">Bantul</a></li>
+        <li>
+          <a href="#" class="hover:text-white transition"
+            >Kota Yogyakarta</a
+          >
+        </li>
+        <li>
+          <a href="#" class="hover:text-white transition">Gunung Kidul</a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="text-lg font-bold mb-6 border-b border-gray-700 pb-2">
+        Ingin Bergabung?
+      </h4>
+      <p class="text-sm text-gray-400 mb-4">
+        Daftarkan usaha kuliner Anda dan capai lebih banyak pelanggan.
+      </p>
+      <button
+        @click="$dispatch('open-register-modal')"
+        class="w-full bg-orange-600 text-white font-bold py-3 rounded-lg hover:bg-orange-700 transition"
+      >
+        Daftar Penjual
+      </button>
+    </div>
+  </div>
+  <div
+    class="container mx-auto px-4 mt-16 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm"
+  >
+    <p>&copy; 2024 MADANG.COM. Seluruh Hak Cipta Dilindungi.</p>
+  </div>
+</footer>

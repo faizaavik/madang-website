@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MADANG.COM - Penjelajah Kuliner Yogyakarta</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+      body {
+        font-family: "Poppins", sans-serif;
+        scroll-behavior: smooth;
+      }
+
+      .hero-gradient {
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          url("https://images.unsplash.com/photo-1512152272829-e3139592d56f?auto=format&fit=crop&q=80&w=1600");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .card-shadow {
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+
+      .card-shadow:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 text-gray-800">
+    <!-- Header & Navigasi -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+      <div
+        class="container mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <div class="flex items-center space-x-2">
+          <span class="text-2xl font-bold text-orange-600"
+            >MADANG<span class="text-gray-800">.COM</span></span
+          >
+        </div>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="#beranda" class="hover:text-orange-600 font-medium"
+            >Beranda</a
+          >
+          <a href="#tentang" class="hover:text-orange-600 font-medium"
+            >Tentang</a
+          >
+          <a href="#referensi" class="hover:text-orange-600 font-medium"
+            >Referensi</a
+          >
+          <a href="#kontak" class="hover:text-orange-600 font-medium">Kontak</a>
+          <div class="flex items-center border-l pl-4 space-x-2">
+            <button class="text-sm font-semibold hover:text-orange-600">
+              ID
+            </button>
+            <span>|</span>
+            <button class="text-sm font-semibold hover:text-orange-600">
+              EN
+            </button>
+          </div>
+        </div>
+
+        <div class="flex items-center space-x-4">
+          <a
+            href="https://tiktok.com"
+            target="_blank"
+            class="text-gray-600 hover:text-black"
+          >
+            <i class="fab fa-tiktok text-xl"></i>
+          </a>
+          <button
+            onclick="toggleModal('loginModal')"
+            class="bg-orange-600 text-white px-5 py-2 rounded-full font-semibold hover:bg-orange-700 transition"
+          >
+            Masuk
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section / Beranda -->
+    <header
+      id="beranda"
+      class="hero-gradient h-[600px] flex items-center justify-center text-center text-white px-4"
+    >
+      <div>
+        <h1 class="text-4xl md:text-6xl font-bold mb-4">
+          Cari Rasa Terbaik di Yogyakarta
+        </h1>
+        <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
+          Temukan hidden gems kuliner mulai dari Gudeg legendaris hingga Sate
+          Klatak yang nikmat.
+        </p>
+
+        <!-- Pencarian & Filter -->
+        <div
+          class="bg-white p-4 rounded-xl shadow-2xl flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-3 max-w-4xl mx-auto"
+        >
+          <div class="flex-1 relative">
+            <i
+              class="fas fa-utensils absolute left-3 top-3.5 text-gray-400"
+            ></i>
+            <input
+              type="text"
+              placeholder="Cari makanan (misal: Gudeg)..."
+              class="w-full pl-10 pr-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-orange-500 text-gray-800"
+            />
+          </div>
+          <div class="flex-1 relative">
+            <i
+              class="fas fa-map-marker-alt absolute left-3 top-3.5 text-gray-400"
+            ></i>
+            <select
+              class="w-full pl-10 pr-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-orange-500 text-gray-800 appearance-none"
+            >
+              <option value="">Pilih Lokasi</option>
+              <option>Kota Yogyakarta</option>
+              <option>Sleman</option>
+              <option>Bantul</option>
+              <option>Gunung Kidul</option>
+            </select>
+          </div>
+          <button
+            class="bg-orange-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-orange-700 transition"
+          >
+            CARI
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Section Tentang -->
+    <section id="tentang" class="py-20 container mx-auto px-4">
+      <div class="flex flex-col md:flex-row items-center gap-12">
+        <div class="md:w-1/2">
+          <img
+            src="https://images.unsplash.com/photo-1562601579-599dec564e06?auto=format&fit=crop&q=80&w=800"
+            alt=""
+            class="rounded-2xl shadow-xl"
+          />
+        </div>
+        <div class="md:w-1/2">
+          <h2 class="text-3xl font-bold mb-6 text-orange-600">
+            Tentang MADANG.COM
+          </h2>
+          <p class="text-gray-600 leading-relaxed mb-6">
+            Dalam era digital yang terus berkembang, MADANG.COM hadir sebagai
+            solusi inovatif untuk menjelajahi kekayaan industri kuliner di
+            Yogyakarta. Kami menjembatani wisatawan dan masyarakat lokal untuk
+            menemukan tempat makan yang sesuai dengan keinginan mereka secara
+            cepat dan akurat.
+          </p>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="p-4 bg-orange-50 rounded-lg">
+              <h4 class="font-bold text-orange-700">Untuk Pembeli</h4>
+              <p class="text-sm">
+                Cari referensi, lihat harga, dan navigasi langsung ke lokasi.
+              </p>
+            </div>
+            <div class="p-4 bg-orange-50 rounded-lg">
+              <h4 class="font-bold text-orange-700">Untuk Penjual</h4>
+              <p class="text-sm">
+                Promosikan menu dan toko Anda kepada ribuan pembeli potensial.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Referensi (Daftar Kuliner) -->
+    <section id="referensi" class="py-20 bg-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="flex justify-between items-end mb-10">
+          <div>
+            <h2 class="text-3xl font-bold">Rekomendasi Terpopuler</h2>
+            <p class="text-gray-600">
+              Pilihan terbaik untuk memanjakan lidah Anda hari ini.
+            </p>
+          </div>
+          <a href="#" class="text-orange-600 font-bold hover:underline"
+            >Lihat Semua →</a
+          >
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Card 1 -->
+          <div
+            class="bg-white rounded-2xl overflow-hidden card-shadow shadow-sm"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&q=80&w=600"
+              alt=""
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-2">
+                <h3 class="text-xl font-bold">Gudeg Yu Djum</h3>
+                <span
+                  class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded font-bold"
+                  ><i class="fas fa-star text-yellow-500"></i> 4.9 (100+)</span
+                >
+              </div>
+              <p class="text-gray-500 text-sm mb-4">
+                Sleman, Daerah Istimewa Yogyakarta
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="text-orange-600 font-bold text-xl"
+                  >15k
+                  <span class="text-sm font-normal text-gray-400"
+                    >/ porsi</span
+                  ></span
+                >
+                <button
+                  class="bg-gray-800 text-white px-4 py-2 rounded-lg text-sm hover:bg-black transition"
+                >
+                  <i class="fas fa-map-marked-alt mr-2"></i>MAPS
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="bg-white rounded-2xl overflow-hidden card-shadow shadow-sm"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&q=80&w=600"
+              alt=""
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-2">
+                <h3 class="text-xl font-bold">Sate Klatak Pak Pong</h3>
+                <span
+                  class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded font-bold"
+                  ><i class="fas fa-star text-yellow-500"></i> 4.8 (250+)</span
+                >
+              </div>
+              <p class="text-gray-500 text-sm mb-4">
+                Bantul, Daerah Istimewa Yogyakarta
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="text-orange-600 font-bold text-xl"
+                  >25k
+                  <span class="text-sm font-normal text-gray-400"
+                    >/ porsi</span
+                  ></span
+                >
+                <button
+                  class="bg-gray-800 text-white px-4 py-2 rounded-lg text-sm hover:bg-black transition"
+                >
+                  <i class="fas fa-map-marked-alt mr-2"></i>MAPS
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="bg-white rounded-2xl overflow-hidden card-shadow shadow-sm"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1610192244261-3f33de3f55e4?auto=format&fit=crop&q=80&w=600"
+              alt=""
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-2">
+                <h3 class="text-xl font-bold">Mi Jowo Mbah Gito</h3>
+                <span
+                  class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded font-bold"
+                  ><i class="fas fa-star text-yellow-500"></i> 4.7 (180+)</span
+                >
+              </div>
+              <p class="text-gray-500 text-sm mb-4">Kota Yogyakarta, DIY</p>
+              <div class="flex justify-between items-center">
+                <span class="text-orange-600 font-bold text-xl"
+                  >15k
+                  <span class="text-sm font-normal text-gray-400"
+                    >/ porsi</span
+                  ></span
+                >
+                <button
+                  class="bg-gray-800 text-white px-4 py-2 rounded-lg text-sm hover:bg-black transition"
+                >
+                  <i class="fas fa-map-marked-alt mr-2"></i>MAPS
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer / Kontak -->
+    <footer id="kontak" class="bg-gray-900 text-white py-16">
+      <div
+        class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-12"
+      >
+        <div>
+          <h2 class="text-2xl font-bold text-orange-500 mb-6">MADANG.COM</h2>
+          <p class="text-gray-400">
+            Platform terpercaya untuk eksplorasi kuliner di wilayah Daerah
+            Istimewa Yogyakarta.
+          </p>
+          <div class="mt-6 flex space-x-4">
+            <a
+              href="#"
+              class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-orange-600 transition"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a
+              href="#"
+              class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-orange-600 transition"
+              ><i class="fab fa-tiktok"></i
+            ></a>
+            <a
+              href="#"
+              class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-orange-600 transition"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-lg font-bold mb-6 border-b border-gray-700 pb-2">
+            Navigasi
+          </h4>
+          <ul class="space-y-4 text-gray-400">
+            <li>
+              <a href="#beranda" class="hover:text-white transition">Beranda</a>
+            </li>
+            <li>
+              <a href="#tentang" class="hover:text-white transition">Tentang</a>
+            </li>
+            <li>
+              <a href="#referensi" class="hover:text-white transition"
+                >Referensi</a
+              >
+            </li>
+            <li>
+              <a href="#kontak" class="hover:text-white transition">Kontak</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-bold mb-6 border-b border-gray-700 pb-2">
+            Lokasi Terpopuler
+          </h4>
+          <ul class="space-y-4 text-gray-400">
+            <li><a href="#" class="hover:text-white transition">Sleman</a></li>
+            <li><a href="#" class="hover:text-white transition">Bantul</a></li>
+            <li>
+              <a href="#" class="hover:text-white transition"
+                >Kota Yogyakarta</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-white transition">Gunung Kidul</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-bold mb-6 border-b border-gray-700 pb-2">
+            Ingin Bergabung?
+          </h4>
+          <p class="text-sm text-gray-400 mb-4">
+            Daftarkan usaha kuliner Anda dan capai lebih banyak pelanggan.
+          </p>
+          <button
+            onclick="toggleModal('registerModal')"
+            class="w-full bg-orange-600 text-white font-bold py-3 rounded-lg hover:bg-orange-700 transition"
+          >
+            Daftar Penjual
+          </button>
+        </div>
+      </div>
+      <div
+        class="container mx-auto px-4 mt-16 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm"
+      >
+        <p>&copy; 2024 MADANG.COM. Seluruh Hak Cipta Dilindungi.</p>
+      </div>
+    </footer>
+
+    <!-- Modal Login (Placeholder) -->
+    <div
+      id="loginModal"
+      class="fixed inset-0 bg-black bg-opacity-50 z-[100] hidden flex items-center justify-center p-4"
+    >
+      <div class="bg-white rounded-2xl w-full max-w-md p-8 relative">
+        <button
+          onclick="toggleModal('loginModal')"
+          class="absolute top-4 right-4 text-gray-400 hover:text-black"
+        >
+          <i class="fas fa-times text-xl"></i>
+        </button>
+        <h3 class="text-2xl font-bold mb-6 text-center">Masuk ke MADANG.COM</h3>
+        <div class="flex justify-center mb-8 space-x-4">
+          <button
+            class="flex-1 py-2 border-b-2 border-orange-600 font-bold text-orange-600"
+          >
+            Pembeli
+          </button>
+          <button
+            class="flex-1 py-2 border-b-2 border-transparent font-bold text-gray-400 hover:text-orange-600"
+          >
+            Penjual
+          </button>
+        </div>
+        <form class="space-y-4">
+          <div>
+            <label class="block text-sm font-semibold mb-1"
+              >Email / No HP</label
+            >
+            <input
+              type="text"
+              class="w-full p-3 rounded-lg border focus:ring-2 focus:ring-orange-500 outline-none"
+              placeholder="Masukkan email anda"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-semibold mb-1">Kata Sandi</label>
+            <input
+              type="password"
+              class="w-full p-3 rounded-lg border focus:ring-2 focus:ring-orange-500 outline-none"
+              placeholder="Masukkan kata sandi"
+            />
+          </div>
+          <div class="text-right">
+            <a href="#" class="text-sm text-orange-600 hover:underline"
+              >Lupa kata sandi?</a
+            >
+          </div>
+          <button
+            type="button"
+            class="w-full bg-orange-600 text-white py-3 rounded-lg font-bold shadow-lg hover:bg-orange-700 transition"
+          >
+            Selesai
+          </button>
+        </form>
+        <p class="text-center mt-6 text-sm text-gray-600">
+          Belum punya akun?
+          <a href="#" class="text-orange-600 font-bold hover:underline"
+            >Daftar sekarang</a
+          >
+        </p>
+      </div>
+    </div>
+
+    <!-- Script Kontrol Modal -->
+    <script>
+      function toggleModal(id) {
+        const modal = document.getElementById(id);
+        if (modal.classList.contains("hidden")) {
+          modal.classList.remove("hidden");
+          document.body.style.overflow = "hidden";
+        } else {
+          modal.classList.add("hidden");
+          document.body.style.overflow = "auto";
+        }
+      }
+
+      // Tutup modal saat klik di luar area konten
+      window.onclick = function (event) {
+        const loginModal = document.getElementById("loginModal");
+        if (event.target == loginModal) {
+          toggleModal("loginModal");
+        }
+      };
+    </script>
+  </body>
+</html>

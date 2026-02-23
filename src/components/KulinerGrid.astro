@@ -1,0 +1,27 @@
+---
+import KulinerCard from './KulinerCard.astro';
+import { kulinerData } from '../data/kuliner';
+---
+
+<!-- Section Referensi (Daftar Kuliner) -->
+<section id="referensi" class="py-20 bg-gray-100">
+  <div class="container mx-auto px-4">
+    <div class="flex justify-between items-end mb-10">
+      <div>
+        <h2 class="text-3xl font-bold">Rekomendasi Terpopuler</h2>
+        <p class="text-gray-600">
+          Pilihan terbaik untuk memanjakan lidah Anda hari ini.
+        </p>
+      </div>
+      <a href="#" class="text-orange-600 font-bold hover:underline"
+        >Lihat Semua →</a
+      >
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {kulinerData.map((item) => (
+        <KulinerCard kuliner={item} />
+      ))}
+    </div>
+  </div>
+</section>

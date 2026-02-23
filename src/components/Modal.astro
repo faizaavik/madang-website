@@ -1,0 +1,77 @@
+---
+// Modal Login Component
+---
+
+<!-- Modal Login -->
+<div
+  x-data="{ open: false }"
+  @open-login-modal.window="open = true"
+  id="loginModal"
+  class="fixed inset-0 bg-black bg-opacity-50 z-[100] hidden items-center justify-center p-4"
+  :class="{ 'flex': open, 'hidden': !open }"
+  @click.self="open = false"
+  x-show="open"
+>
+  <div
+    class="bg-white rounded-2xl w-full max-w-md p-8 relative"
+    @click.stop
+  >
+    <button
+      @click="open = false"
+      class="absolute top-4 right-4 text-gray-400 hover:text-black"
+    >
+      <i class="fas fa-times text-xl"></i>
+    </button>
+    <h3 class="text-2xl font-bold mb-6 text-center">Masuk ke MADANG.COM</h3>
+    <div class="flex justify-center mb-8 space-x-4">
+      <button
+        class="flex-1 py-2 border-b-2 border-orange-600 font-bold text-orange-600"
+      >
+        Pembeli
+      </button>
+      <button
+        class="flex-1 py-2 border-b-2 border-transparent font-bold text-gray-400 hover:text-orange-600"
+      >
+        Penjual
+      </button>
+    </div>
+    <form class="space-y-4">
+      <div>
+        <label class="block text-sm font-semibold mb-1"
+          >Email / No HP</label
+        >
+        <input
+          type="text"
+          class="w-full p-3 rounded-lg border focus:ring-2 focus:ring-orange-500 outline-none"
+          placeholder="Masukkan email anda"
+        />
+      </div>
+      <div>
+        <label class="block text-sm font-semibold mb-1">Kata Sandi</label>
+        <input
+          type="password"
+          class="w-full p-3 rounded-lg border focus:ring-2 focus:ring-orange-500 outline-none"
+          placeholder="Masukkan kata sandi"
+        />
+      </div>
+      <div class="text-right">
+        <a href="#" class="text-sm text-orange-600 hover:underline"
+          >Lupa kata sandi?</a
+        >
+      </div>
+      <button
+        type="button"
+        @click="open = false"
+        class="w-full bg-orange-600 text-white py-3 rounded-lg font-bold shadow-lg hover:bg-orange-700 transition"
+      >
+        Selesai
+      </button>
+    </form>
+    <p class="text-center mt-6 text-sm text-gray-600">
+      Belum punya akun?
+      <a href="#" class="text-orange-600 font-bold hover:underline"
+        >Daftar sekarang</a
+      >
+    </p>
+  </div>
+</div>
