@@ -5,6 +5,7 @@ npm create astro@latest -- --template minimal
 ```
 
 > 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+> Domain = madang-website.vercel.app
 
 ## 🚀 Project Structure
 
